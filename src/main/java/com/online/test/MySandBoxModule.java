@@ -3,25 +3,21 @@ package com.online.test;
 import com.alibaba.jvm.sandbox.api.Information;
 import com.alibaba.jvm.sandbox.api.Module;
 import com.alibaba.jvm.sandbox.api.annotation.Command;
-import com.alibaba.jvm.sandbox.api.event.Event;
-import com.alibaba.jvm.sandbox.api.listener.EventListener;
 import com.alibaba.jvm.sandbox.api.listener.ext.Advice;
 import com.alibaba.jvm.sandbox.api.listener.ext.AdviceListener;
 import com.alibaba.jvm.sandbox.api.listener.ext.EventWatchBuilder;
 import com.alibaba.jvm.sandbox.api.resource.ModuleEventWatcher;
-import lombok.extern.slf4j.Slf4j;
 import org.kohsuke.MetaInfServices;
-
 import javax.annotation.Resource;
-
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import static com.alibaba.jvm.sandbox.api.ProcessController.returnImmediately;
-import static com.alibaba.jvm.sandbox.api.ProcessController.throwsImmediately;
 
 @MetaInfServices(Module.class)
 @Information(id = "my-sandbox-module")// 模块名,在指定挂载进程后通过-d指定模块,配合@Command注解来唯一确定方法
-@Slf4j
 public class MySandBoxModule implements Module {
 
     @Resource
