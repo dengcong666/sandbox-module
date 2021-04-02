@@ -33,8 +33,8 @@ public class MySandBoxModule implements Module {
                     public void before(Advice advice) throws Throwable {
                         System.out.println("sandbox 切入成功！！！");
                         System.out.println("挂载模块的代码逻辑将覆盖目标进程方法逻辑！！！");
-                        List<Map> list = new ArrayList<>();
-                        Map<Object, Object> map = new HashMap<>();
+                        List<Map> list = new ArrayList<Map>();
+                        Map<Object, Object> map = new HashMap<Object, Object>();
                         map.put("sandbox流程控制", "改变返回值666");
                         list.add(map);
                         returnImmediately(list);
